@@ -146,7 +146,3 @@ RTK-based store with interfaces and slices for state management.
 - Run on Android: `npm run android` (or `yarn android`).
 - Run on iOS: `npm run ios` (or `yarn ios`).
 - ✨ Don't forget to enable ESLint ✨
-
-```
-
-```
