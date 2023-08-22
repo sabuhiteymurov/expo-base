@@ -1,0 +1,13 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "typeRoots": ["./types"]
+  },
+  "include": ["**/*.ts", "**/*.tsx",
+    "src/e2e/jest.setup.ts"
+  ]
+}
