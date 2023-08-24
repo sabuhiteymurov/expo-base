@@ -5,6 +5,7 @@ import NetInfo from '@react-native-community/netinfo';
 import { ProvidersWrapper } from '@/src/context/auth';
 import { store } from '../store';
 import { setIsConnectedToInternet } from '@/src/store/slices/appSlice';
+import { initI18next } from '../services/i18n';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -45,6 +46,10 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
     }
   }, [loaded]);
+
+  useEffect(() => {
+    initI18next();
+  }, []);
 
   if (!loaded) {
     return null;
