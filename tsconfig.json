@@ -5,9 +5,7 @@
     "paths": {
       "@/*": ["./*"]
     },
-    "typeRoots": ["./types"]
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
-  "include": ["**/*.ts", "**/*.tsx",
-    "src/e2e/jest.setup.ts"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "src/e2e/jest.setup.ts"]
 }

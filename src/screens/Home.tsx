@@ -4,7 +4,7 @@ import { Link } from 'expo-router';
 
 const Home = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='home-screen'>
       <Text>Home</Text>
       <Link href='/about'>
         <Text style={styles.link}>Go to about screen</Text>

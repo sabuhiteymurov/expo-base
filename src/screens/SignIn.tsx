@@ -14,7 +14,7 @@ const SignIn = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='sign-in-screen'>
       <Text>Sign In screen</Text>
       <Button title='Go to dashboard' onPress={navigateToDashboard} />
     </View>
