@@ -1,9 +1,11 @@
 import { useRouter } from 'expo-router';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { storage } from '../helpers/storage';
+import { useTranslation } from 'react-i18next';
 
 const SignIn = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const navigateToDashboard = () => {
     // Important note: Currently, React Native MMKV is not supported in Expo Go.
@@ -15,8 +17,8 @@ const SignIn = () => {
 
   return (
     <View style={styles.container} testID='sign-in-screen'>
-      <Text>Sign In screen</Text>
-      <Button title='Go to dashboard' onPress={navigateToDashboard} />
+      <Text>{t('signIn:title')}</Text>
+      <Button title={t('signIn:goToDashboard')} onPress={navigateToDashboard} />
     </View>
   );
 };

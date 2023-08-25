@@ -2,38 +2,51 @@ import i18next from 'i18next';
 import { getLocales } from 'expo-localization';
 import { initReactI18next } from 'react-i18next';
 import { storage } from '@/src/helpers/storage';
-import { en } from './en';
-import { de } from './de';
+import enHome from './locales/en/home.json';
+import enProfile from './locales/en/profile.json';
+import enSignIn from './locales/en/sign-in.json';
+import deHome from './locales/de/home.json';
+import deProfile from './locales/de/profile.json';
+import deSignIn from './locales/de/sign-in.json';
 
 // the translations
 // (tip move them in a JSON file and import them)
 const resources: any = {
   en: {
-    translation: en,
+    home: enHome,
+    profile: enProfile,
+    signIn: enSignIn,
   },
   de: {
-    translation: de,
+    home: deHome,
+    profile: deProfile,
+    signIn: deSignIn,
   },
-};
+} as const;
+// This is for situations where the user can change the language in the app.
+const lng: string | undefined = storage.getString('appLanguage');
 
-export function initI18next() {
-  // This is for situations where the user can change the language in the app.
-  const lng: string | undefined = storage.getString('appLanguage');
+// Generally, we should use the locale language as the default language.
+const localeLng = getLocales()[0].languageCode as string;
+const isLocaleLngSupported = resources?.[localeLng];
 
-  // Generally, we should use the locale language as the default language.
-  const localeLng = getLocales()[0].languageCode;
+const defaultLocale = 'en';
+export const currentLanguage = i18next.language || defaultLocale;
 
-  i18next
-    .use(initReactI18next) // passes i18n down to react-i18next
-    .init({
-      compatibilityJSON: 'v3',
-      resources,
-      lng: lng ? lng : resources?.[localeLng] ? localeLng : 'en',
+i18next
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    compatibilityJSON: 'v3',
+    fallbackLng: 'en',
+    resources,
+    lng: lng ? lng : isLocaleLngSupported ? localeLng : 'en',
 
-      keySeparator: false, // we do not use keys in form messages.welcome
+    keySeparator: false, // we do not use keys in form messages.welcome
 
-      interpolation: {
-        escapeValue: false, // react already safe from xss
-      },
-    });
-}
+    interpolation: {
+      escapeValue: false, // react already safes from xss
+    },
+  });
+
+const t = i18next.t.bind(i18next);
+export { t };

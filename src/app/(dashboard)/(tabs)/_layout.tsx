@@ -1,10 +1,11 @@
 import { Tabs } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 export default function TabLayout() {
+  const { t } = useTranslation();
   return (
     <Tabs
-      screenOptions={({ route }: any) => ({
+      screenOptions={() => ({
         headerShown: false,
         tabBarStyle: {},
       })}
@@ -12,17 +13,15 @@ export default function TabLayout() {
       <Tabs.Screen
         name='home/index'
         options={{
-          title: 'Home',
+          title: t('home:title'),
         }}
       />
       <Tabs.Screen
         name='profile/index'
         options={{
-          title: 'Profile',
+          title: t('profile:title'),
         }}
       />
     </Tabs>
   );
 }
-
-const styles = StyleSheet.create({});
