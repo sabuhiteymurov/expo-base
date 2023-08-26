@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
-import { Button, StyleSheet, View } from 'react-native';
-import Text from '../components/UI/Text';
+import { Button, StyleSheet} from 'react-native';
+import { View, Text } from 'components/UI/Themed';
 import { storage } from '../helpers/storage';
 import { useTranslation } from 'react-i18next';
 

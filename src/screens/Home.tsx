@@ -1,7 +1,7 @@
-import { Button, StyleSheet, View } from 'react-native';
-import { useTranslation } from 'react-i18next';
-import Text from '../components/UI/Text';
+import { Button, StyleSheet} from 'react-native';
 import { Link } from 'expo-router';
+import { useTranslation } from 'react-i18next';
+import { View, Text } from 'components/UI/Themed';
 import { storage } from '../helpers/storage';
 
 const Home = () => {
