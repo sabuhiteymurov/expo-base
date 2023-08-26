@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { storage } from '../helpers/storage';
+import { storage } from 'helpers/storage';
 import { useTranslation } from 'react-i18next';
 
 const SignIn = () => {

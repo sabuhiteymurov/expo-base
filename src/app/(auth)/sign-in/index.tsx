@@ -1,4 +1,4 @@
-import SignIn from '@/src/screens/SignIn';
+import SignIn from 'screens/SignIn';
 
 const signIn = () => {
   return <SignIn />;

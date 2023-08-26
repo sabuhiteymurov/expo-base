@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import { getLocales } from 'expo-localization';
 import { initReactI18next } from 'react-i18next';
-import { storage } from '@/src/helpers/storage';
+import { storage } from 'helpers/storage';
 import enHome from './locales/en/home.json';
 import enProfile from './locales/en/profile.json';
 import enSignIn from './locales/en/sign-in.json';

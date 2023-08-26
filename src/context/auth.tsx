@@ -11,7 +11,7 @@ import { RootSiblingParent } from 'react-native-root-siblings';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import { store } from '../store';
-import { storage } from '../helpers/storage';
+import { storage } from 'helpers/storage';
 
 // This hook will protect the route access based on user authentication.
 function useProtectedRoute(user: any) {

@@ -2,7 +2,7 @@ import { Button, StyleSheet} from 'react-native';
 import { Link } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { View, Text } from 'components/UI/Themed';
-import { storage } from '../helpers/storage';
+import { storage } from 'helpers/storage';
 
 const Home = () => {
   const { t, i18n } = useTranslation();

@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import { Button, StyleSheet} from 'react-native';
 import { View, Text } from 'components/UI/Themed';
-import { storage } from '../helpers/storage';
+import { storage } from 'helpers/storage';
 import { useTranslation } from 'react-i18next';
 
 const Profile = () => {
