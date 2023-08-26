@@ -72,5 +72,3 @@ build/
 .gradle
 local.properties
 *.iml
-ios
-android
