@@ -2,9 +2,10 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import NetInfo from '@react-native-community/netinfo';
-import { ProvidersWrapper } from '@/src/context/auth';
+import { ProvidersWrapper } from 'context/auth';
 import { store } from '../store';
-import { setIsConnectedToInternet } from '@/src/store/slices/appSlice';
+import { setIsConnectedToInternet } from 'store/slices/appSlice';
+import 'services/i18n';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -21,10 +22,10 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    'sfpd-regular': require('@/src/assets/fonts/SF-Pro-Display-Regular.ttf'),
-    'sfpd-medium': require('@/src/assets/fonts/SF-Pro-Display-Medium.ttf'),
-    'sfpd-semibold': require('@/src/assets/fonts/SF-Pro-Display-Semibold.ttf'),
-    'sfpd-bold': require('@/src/assets/fonts/SF-Pro-Display-Bold.ttf'),
+    'sfpd-regular': require('assets/fonts/SF-Pro-Display-Regular.ttf'),
+    'sfpd-medium': require('assets/fonts/SF-Pro-Display-Medium.ttf'),
+    'sfpd-semibold': require('assets/fonts/SF-Pro-Display-Semibold.ttf'),
+    'sfpd-bold': require('assets/fonts/SF-Pro-Display-Bold.ttf'),
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.

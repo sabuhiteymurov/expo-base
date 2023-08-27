@@ -1,14 +1,50 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { Button, StyleSheet} from 'react-native';
+import { Link } from 'expo-router';
+import { useTranslation } from 'react-i18next';
+import { View, Text } from 'components/UI/Themed';
+import { storage } from 'helpers/storage';
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLang = async (lng: string) => {
+    try {
+      await i18n.changeLanguage(lng);
+      storage.set('appLanguage', lng);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.container} testID='home-screen'>
+      <Text>{t('home:title')}</Text>
+      <Link href='/about'>
+        <Text style={styles.link}>{t('home:goToAboutScreen')}</Text>
+      </Link>
+      <Text>{t('home:changeLang')}</Text>
+      <View style={styles.btnContainer}>
+        <Button title={t('home:english')} onPress={() => changeLang('en')} />
+        <Button title={t('home:german')} onPress={() => changeLang('de')} />
+      </View>
     </View>
   );
 };
 
-export default Home;
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    gap: 20,
+  },
+  link: {
+    color: 'blue',
+  },
+  btnContainer: {
+    flexDirection: 'row',
+    gap: 20,
+  },
+});
 
-const styles = StyleSheet.create({});
+export default Home;

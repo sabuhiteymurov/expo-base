@@ -6,17 +6,17 @@
 
 - [Boilerplate Features](#boilerplate-features)
 - [Folder Structure](#folder-structure)
-  - [App](#app)
-  - [Assets](#assets)
-  - [Components](#components)
-  - [Constants](#constants)
-  - [Context](#context)
-  - [E2E](#e2e)
-  - [Helpers](#helpers)
-  - [Hooks](#hooks)
-  - [Screens](#screens)
-  - [Services](#services)
-  - [Store](#store)
+    - [App](#app)
+    - [Assets](#assets)
+    - [Components](#components)
+    - [Constants](#constants)
+    - [Context](#context)
+    - [E2E](#e2e)
+    - [Helpers](#helpers)
+    - [Hooks](#hooks)
+    - [Screens](#screens)
+    - [Services](#services)
+    - [Store](#store)
 - [Run Expo Dev Build](#run-expo-dev-build)
 
 <br>
@@ -45,6 +45,7 @@
 
 ```
 src
+ ├── @types
  ├── app
  ├── assets
      ├── fonts
@@ -62,6 +63,7 @@ src
  ├── services
      ├── api
      ├── i18n
+         ├── locales
  └── store
      └── slices
 ```

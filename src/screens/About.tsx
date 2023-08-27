@@ -1,14 +1,27 @@
-import { View, StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Link } from 'expo-router';
+import { StyleSheet } from 'react-native';
+import { Text, View } from 'components/UI/Themed';
 
 const About = () => {
-  const router = useRouter();
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <Text>About screen</Text>
+      <Link href='/home'>
+        <Text style={styles.link}>Go to home screen</Text>
+      </Link>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 20,
+  },
+  link: {
+    color: 'blue',
   },
 });
 

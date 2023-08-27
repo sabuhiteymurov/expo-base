@@ -1,40 +1,52 @@
-import i18n from 'i18next';
+import i18next from 'i18next';
 import { getLocales } from 'expo-localization';
 import { initReactI18next } from 'react-i18next';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { I18nManager } from 'react-native';
-import { en } from './en';
-import { ar } from './ar';
+import { storage } from 'helpers/storage';
+import enHome from './locales/en/home.json';
+import enProfile from './locales/en/profile.json';
+import enSignIn from './locales/en/sign-in.json';
+import deHome from './locales/de/home.json';
+import deProfile from './locales/de/profile.json';
+import deSignIn from './locales/de/sign-in.json';
 
 // the translations
 // (tip move them in a JSON file and import them)
 const resources: any = {
   en: {
-    translation: en,
+    home: enHome,
+    profile: enProfile,
+    signIn: enSignIn,
   },
-  ar: {
-    translation: ar,
+  de: {
+    home: deHome,
+    profile: deProfile,
+    signIn: deSignIn,
   },
-  ur: {
-    translation: ar,
-  },
-};
+} as const;
+// This is for situations where the user can change the language in the app.
+const lng: string | undefined = storage.getString('appLanguage');
 
-export async function initI18next() {
-  const lng: any = await AsyncStorage.getItem('appLanguage');
-  const localeLng = getLocales()[0].languageCode;
+// Generally, we should use the locale language as the default language.
+const localeLng = getLocales()[0].languageCode as string;
+const isLocaleLngSupported = resources?.[localeLng];
 
-  i18n
-    .use(initReactI18next) // passes i18n down to react-i18next
-    .init({
-      compatibilityJSON: 'v3',
-      resources,
-      lng: lng ? lng : resources?.[localeLng] ? localeLng : 'en',
+const defaultLocale = 'en';
+export const currentLanguage = i18next.language || defaultLocale;
 
-      keySeparator: false, // we do not use keys in form messages.welcome
+i18next
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    compatibilityJSON: 'v3',
+    fallbackLng: 'en',
+    resources,
+    lng: lng ? lng : isLocaleLngSupported ? localeLng : 'en',
 
-      interpolation: {
-        escapeValue: false, // react already safes from xss
-      },
-    });
-}
+    keySeparator: false, // we do not use keys in form messages.welcome
+
+    interpolation: {
+      escapeValue: false, // react already safes from xss
+    },
+  });
+
+const t = i18next.t.bind(i18next);
+export { t };

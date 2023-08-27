@@ -29,7 +29,6 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@config-plugins/detox": "^6.0.0",
     "@gorhom/bottom-sheet": "^4.4.7",
     "@react-native-community/netinfo": "9.3.10",
     "@react-navigation/elements": "^1.3.17",
@@ -39,12 +38,9 @@
     "@shopify/flash-list": "1.4.3",
     "@testing-library/jest-native": "^5.4.2",
     "@testing-library/react-native": "^12.2.0",
-    "@types/jest": "^29.5.3",
     "axios": "^1.4.0",
-    "dayjs": "^1.11.9",
     "expo": "^49.0.8",
     "expo-build-properties": "~0.8.3",
-    "expo-clipboard": "~4.3.1",
     "expo-dev-client": "~2.4.8",
     "expo-font": "~11.4.0",
     "expo-image": "~1.3.2",
@@ -57,16 +53,11 @@
     "expo-updates": "~0.18.12",
     "expo-web-browser": "~12.3.2",
     "i18next": "^23.4.4",
-    "lodash.debounce": "^4.0.8",
-    "moti": "^0.26.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.4",
     "react-i18next": "^13.1.2",
     "react-native": "0.72.4",
-    "react-native-actions-sheet": "^0.8.29",
-    "react-native-bouncy-checkbox": "^3.0.7",
-    "react-native-bouncy-checkbox-group": "^0.1.1",
     "react-native-gesture-handler": "^2.12.1",
     "react-native-mmkv": "^2.10.1",
     "react-native-reanimated": "~3.3.0",
@@ -77,11 +68,13 @@
     "react-native-svg": "13.9.0",
     "react-native-uuid": "^2.0.1",
     "react-native-web": "^0.19.7",
-    "react-native-webview": "13.2.2",
-    "react-redux": "^8.1.2"
+    "react-redux": "^8.1.2",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
+    "@config-plugins/detox": "^6.0.0",
+    "@types/jest": "^29.5.4",
     "@types/lodash.debounce": "^4.0.7",
     "@types/react": "^18.2.20",
     "@types/react-redux": "^7.1.25",
@@ -89,6 +82,7 @@
     "jest": "^29.6.2",
     "jest-expo": "^49.0.0",
     "react-test-renderer": "18.2.0",
+    "sharp-cli": "^4.1.1",
     "typescript": "^5.1.3"
   },
   "overrides": {
