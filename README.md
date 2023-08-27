@@ -44,6 +44,7 @@
 # Folder Structure
 
 ```
+e2e
 src
  ├── @types
  ├── app
@@ -55,7 +56,6 @@ src
      └── UI
  ├── constants
  ├── context
- ├── e2e
  ├── helpers
  ├── hooks
      └── eas
