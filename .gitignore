@@ -9,6 +9,8 @@ dist/
 web-build/
 
 # Native
+android
+ios
 *.orig.*
 *.jks
 *.p8
@@ -72,3 +74,9 @@ build/
 .gradle
 local.properties
 *.iml
+
+bin/
+
+# Detox
+artifacts/
+
