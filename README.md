@@ -1,5 +1,8 @@
 <h1 align="center">Expo Base</h1>
 
+![Expo Base Top Language](https://img.shields.io/github/languages/top/sabuhiteymurov/expo-base)
+![Expo Base Release Date](https://img.shields.io/github/release-date/sabuhiteymurov/expo-base)
+[![PR's welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/sabuhiteymurov/expo-base/pulls)
 <h4 align="center">Expo boilerplate for rapid application development, featuring authentication and more.</h4>
 
 <br>
