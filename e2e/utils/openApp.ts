@@ -1,5 +1,5 @@
-const appConfig = require('../../app.config.ts');
 const { resolveConfig } = require('detox/internals');
+const appConfig = require('../../app.config.ts');
 
 const platform = device.getPlatform();
 
@@ -39,8 +39,9 @@ async function openAppForDebugBuild(platform: string) {
   await sleep(3000);
 }
 
+// URL should start with `expo+<app-slug>://`
 const getDeepLinkUrl = (url: string) =>
-  `eastestsexample://expo-development-client/?url=${encodeURIComponent(url)}`;
+  `expo+expo-base://expo-development-client/?url=${encodeURIComponent(url)}`;
 
 const getDevLauncherPackagerUrl = (platform: string) =>
   `http://localhost:8081/index.bundle?platform=${platform}&dev=true&minify=false&disableOnboarding=1`;

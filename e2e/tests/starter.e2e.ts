@@ -1,12 +1,17 @@
 const { openApp } = require('../utils/openApp');
-import { by, element, expect } from 'detox';
+import { by, element, expect, waitFor } from 'detox';
 
-describe('Example', () => {
+describe('User can sign in successfully', () => {
   beforeAll(async () => {
     await openApp();
   }); 
 
-  it('should have welcome screen', async () => {
-    await expect(element(by.id('home-screen'))).toBeVisible();  
+  it('should open sign in screen', async () => {
+    await expect(element(by.id('sign-in-screen'))).toBeVisible();  
+    await expect(element(by.id('sign-in-btn'))).toBeVisible();  
+  });
+
+  it('should open home screen when signed in', async () => {
+    await element(by.id('sign-in-btn')).tap().then(async () => await expect(element(by.id('sign-in-screen'))).toBeVisible());
   });
 });
