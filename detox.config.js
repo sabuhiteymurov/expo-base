@@ -36,7 +36,7 @@ module.exports = {
       type: 'android.apk',
       build:
         'cd android && ./gradlew :app:assembleDebug :app:assembleAndroidTest -DtestBuildType=debug && cd ..',
-      binaryPath: 'bin/expo-base.apk',
+      binaryPath: 'android/app/build/outputs/apk/debug/app-debug.apk',
     },
     'android.release': {
       type: 'android.apk',

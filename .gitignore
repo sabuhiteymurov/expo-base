@@ -9,8 +9,8 @@ dist/
 web-build/
 
 # Native
-android
-ios
+android/
+ios/
 *.orig.*
 *.jks
 *.p8
@@ -79,4 +79,6 @@ bin/
 
 # Detox
 artifacts/
+
+*.log
 

@@ -18,7 +18,7 @@ const SignIn = () => {
   return (
     <View style={styles.container} testID='sign-in-screen'>
       <Text>{t('signIn:title')}</Text>
-      <Button title={t('signIn:goToDashboard')} onPress={navigateToDashboard} />
+      <Button title={t('signIn:goToDashboard')} onPress={navigateToDashboard} testID='sign-in-btn' />
     </View>
   );
 };
