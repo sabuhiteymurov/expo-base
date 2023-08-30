@@ -1,5 +1,9 @@
 import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
-import { App } from '../interfaces';
+
+interface App {
+  isConnectedToInternet: boolean;
+  user: { email: string; fullName: string; accessToken: string } | null;
+}
 
 const initialState: App = {
   isConnectedToInternet: false,
