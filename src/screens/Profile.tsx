@@ -1,12 +1,12 @@
 import { useRouter } from 'expo-router';
-import { Button, StyleSheet} from 'react-native';
+import { Button, StyleSheet } from 'react-native';
 import { View, Text } from 'components/UI/Themed';
 import { storage } from 'helpers/storage';
 import { useTranslation } from 'react-i18next';
 
 const Profile = () => {
   const router = useRouter();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const handleSignOut = () => {
     storage.delete('user');

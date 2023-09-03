@@ -3,8 +3,8 @@ import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import NetInfo from '@react-native-community/netinfo';
 import { ProvidersWrapper } from 'context/auth';
-import { store } from '../store';
 import { setIsConnectedToInternet } from 'store/slices/appSlice';
+import { store } from '../store';
 import 'services/i18n';
 
 export {

@@ -1,4 +1,4 @@
-import { Button, StyleSheet} from 'react-native';
+import { Button, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { View, Text } from 'components/UI/Themed';
