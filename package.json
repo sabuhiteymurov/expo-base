@@ -18,7 +18,7 @@
     "ios:preview": "eas build --profile preview --platform ios",
     "web": "expo start --web",
     "typecheck": "tsc",
-    "lint": "eslint ./src ./e2e",
+    "lint": "eslint ./src ./e2e --fix",
     "test": "jest --watchAll",
     "e2e:ios:build": "detox build -c ios.release",
     "e2e:ios:test": "detox test -c ios.release",
@@ -99,14 +99,10 @@
   "eslintConfig": {
     "extends": "universe/native"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run lint --fix"
+      "prettier --write",
+      "npm run lint"
     ]
   }
 }
