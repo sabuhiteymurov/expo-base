@@ -1,6 +1,7 @@
 {
   "name": "expo-base",
   "version": "1.0.0",
+  "main": "index.js",
   "private": true,
   "scripts": {
     "start": "expo start",
@@ -48,6 +49,7 @@
     "expo-dev-client": "~2.4.8",
     "expo-font": "~11.4.0",
     "expo-image": "~1.3.2",
+    "expo-linking": "^5.0.2",
     "expo-localization": "~14.3.0",
     "expo-router": "2.0.0",
     "expo-secure-store": "~12.3.1",
@@ -79,7 +81,6 @@
     "@babel/core": "^7.22.10",
     "@config-plugins/detox": "^6.0.0",
     "@types/jest": "^29.5.4",
-    "@types/lodash.debounce": "^4.0.7",
     "@types/react": "^18.2.21",
     "@types/react-redux": "^7.1.26",
     "detox": "^20.11.2",
