@@ -2,16 +2,18 @@ import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
 
 interface App {
   isConnectedToInternet: boolean;
-  user: { email: string; fullName: string; accessToken: string } | null;
+  language: string | null;
+  user: { name: string; age: number } | null;
 }
 
 const initialState: App = {
   isConnectedToInternet: false,
+  language: null,
   user: null,
 };
 
 export const appSlice = createSlice({
-  name: 'appSlice',
+  name: 'app',
   initialState,
   reducers: {
     setIsConnectedToInternet: (
@@ -19,6 +21,12 @@ export const appSlice = createSlice({
       action: PayloadAction<typeof initialState.isConnectedToInternet>
     ) => {
       state.isConnectedToInternet = action.payload;
+    },
+    setAppLanguage: (
+      state: Draft<typeof initialState>,
+      action: PayloadAction<typeof initialState.language>
+    ) => {
+      state.language = action.payload;
     },
     setUser: (
       state: Draft<typeof initialState>,
@@ -29,6 +37,7 @@ export const appSlice = createSlice({
   },
 });
 
-export const { setIsConnectedToInternet, setUser } = appSlice.actions;
+export const { setIsConnectedToInternet, setAppLanguage, setUser } =
+  appSlice.actions;
 
 export default appSlice.reducer;

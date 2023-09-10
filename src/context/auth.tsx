@@ -10,7 +10,6 @@ import { useColorScheme } from 'react-native';
 import { RootSiblingParent } from 'react-native-root-siblings';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
-import { storage } from 'helpers/storage';
 import { store } from '../store';
 
 // This hook will protect the route access based on user authentication.
@@ -39,7 +38,7 @@ function useProtectedRoute(user: any) {
 }
 
 export function ProvidersWrapper({ children }: { children: ReactNode }) {
-  const user: string | undefined = storage.getString('user');
+  const user = store.getState().app.user;
 
   const colorScheme = useColorScheme();
 
