@@ -14,17 +14,17 @@
 
 - [Boilerplate Features](#boilerplate-features)
 - [Folder Structure](#folder-structure)
-    - [App](#app)
-    - [Assets](#assets)
-    - [Components](#components)
-    - [Constants](#constants)
-    - [Context](#context)
-    - [E2E](#e2e)
-    - [Helpers](#helpers)
-    - [Hooks](#hooks)
-    - [Screens](#screens)
-    - [Services](#services)
-    - [Store](#store)
+  - [App](#app)
+  - [Assets](#assets)
+  - [Components](#components)
+  - [Constants](#constants)
+  - [Context](#context)
+  - [E2E](#e2e)
+  - [Hooks](#hooks)
+  - [Screens](#screens)
+  - [Services](#services)
+  - [Store](#store)
+  - [Translations](#translations)
 - [Run Expo Dev Build](#run-expo-dev-build)
 
 <br>
@@ -64,16 +64,15 @@ src
      └── UI
  ├── constants
  ├── context
- ├── helpers
  ├── hooks
      └── eas
  ├── screens
  ├── services
      ├── api
-     ├── i18n
-         ├── locales
- └── store
+ ├── store
      └── slices
+ └── translations
+     └── locales
 ```
 
 <a id="app"></a>
@@ -114,12 +113,6 @@ React Context, Redux Context Provider, and Safe Area Provider.
 
 End-to-end tests for the project, structured similarly to screens for better management.
 
-<a id="helpers"></a>
-
-# Helpers
-
-Reusable helper functions, such as MMKV storage instance.
-
 <a id="hooks"></a>
 
 # Hooks
@@ -136,14 +129,20 @@ Pages of the application, organized in this folder and imported into specific ro
 
 # Services
 
-Services used in screens, such as API handling and internationalization (i18n). The `api` folder contains routes created
-with Axios instances, and the `i18n` folder contains functions for internationalization and localization.
+Services used in screens, such as API handling. The `api` folder contains routes created
+with Axios instances.
 
 <a id="store"></a>
 
 # Store
 
-RTK-based store with interfaces and slices for state management.
+RTK based store, uses MMKV storage and redux-persist for state persistence. The `slices` folder includes reducers used throughout the app.
+
+<a id="translations"></a>
+
+# Translations
+
+The `translations` folder contains functions and locales for internationalization and localization.
 
 <a id="run-expo-dev-build"></a>
 
