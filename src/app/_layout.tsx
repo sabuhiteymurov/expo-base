@@ -5,7 +5,7 @@ import NetInfo from '@react-native-community/netinfo';
 import { ProvidersWrapper } from 'context/auth';
 import { setIsConnectedToInternet } from 'store/slices/appSlice';
 import { store } from '../store';
-import 'services/i18n';
+import '../translations';
 
 export {
   // Catch any errors thrown by the Layout component.
