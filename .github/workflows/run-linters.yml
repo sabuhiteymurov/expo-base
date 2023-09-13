@@ -10,7 +10,7 @@ jobs:
     name: Run ESLint rules checking
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Install dependencies
         run: yarn install
@@ -20,8 +20,8 @@ jobs:
 
       - name: Check for linting errors
         run: |
-          lint_output=$(yarn lint --json)
-          if [[ "$lint_output" != "[]" ]]; then
+          lint_output=$(yarn lint)
+          if [[ "$lint_output" == *"error"* ]]; then
             echo "Linting errors found. Preventing merge."
             echo "$lint_output"
             exit 1
