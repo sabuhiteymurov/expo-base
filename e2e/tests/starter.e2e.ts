@@ -16,7 +16,8 @@ describe('User can sign in successfully', () => {
     await element(by.id('sign-in-btn'))
       .tap()
       .then(
-        async () => await expect(element(by.id('sign-in-screen'))).toBeVisible()
+        async () =>
+          await expect(element(by.id('sign-in-screen'))).toBeVisible(),
       );
   });
 });

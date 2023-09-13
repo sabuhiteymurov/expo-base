@@ -25,7 +25,7 @@ const resources: any = {
 } as const;
 // This is for situations where the user can change the language in the app.
 const lng: string | null = JSON.parse(
-  JSON.parse(reduxStorage.getItem('persist:root')?.['_j']).app
+  JSON.parse(reduxStorage.getItem('persist:root')?.['_j']).app,
 ).language;
 
 // Generally, we should use the locale language as the default language.

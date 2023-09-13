@@ -11,11 +11,11 @@ export const reduxStorage: Storage = {
     storage.set(key, value);
     return Promise.resolve(true);
   },
-  getItem: (key) => {
+  getItem: key => {
     const value = storage.getString(key);
     return Promise.resolve(value);
   },
-  removeItem: (key) => {
+  removeItem: key => {
     storage.delete(key);
     return Promise.resolve();
   },
