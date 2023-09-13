@@ -34,10 +34,7 @@ const config: ExpoConfig = {
     [
       '@config-plugins/detox',
       {
-        subdomains:
-          process.env.EAS_BUILD_PROFILE === 'development'
-            ? '*'
-            : ['10.0.2.2', 'localhost'],
+        subdomains: '*',
       },
     ],
   ],

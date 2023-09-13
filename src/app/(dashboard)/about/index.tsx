@@ -1,10 +1,7 @@
-import About from '@/src/screens/About'
-import React from 'react'
+import About from 'screens/About';
 
 const index = () => {
-  return (
-    <About/>
-  )
-}
+  return <About />;
+};
 
-export default index
+export default index;

@@ -1,3 +1,11 @@
+<p align="center">
+  <img alt="Expo Base" width=600 src="https://raw.githubusercontent.com/sabuhiteymurov/expo-base/main/docs/img/expo-base-logo.png"/>
+</p>
+
+![Expo Base Top Language](https://img.shields.io/github/languages/top/sabuhiteymurov/expo-base)
+![Expo Base Release Date](https://img.shields.io/github/release-date/sabuhiteymurov/expo-base)
+[![PR's welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/sabuhiteymurov/expo-base/pulls)
+
 <h1 align="center">Expo Base</h1>
 
 <h4 align="center">Expo boilerplate for rapid application development, featuring authentication and more.</h4>
@@ -12,11 +20,11 @@
   - [Constants](#constants)
   - [Context](#context)
   - [E2E](#e2e)
-  - [Helpers](#helpers)
   - [Hooks](#hooks)
   - [Screens](#screens)
   - [Services](#services)
   - [Store](#store)
+  - [Translations](#translations)
 - [Run Expo Dev Build](#run-expo-dev-build)
 
 <br>
@@ -44,7 +52,9 @@
 # Folder Structure
 
 ```
+e2e
 src
+ ├── @types
  ├── app
  ├── assets
      ├── fonts
@@ -54,16 +64,15 @@ src
      └── UI
  ├── constants
  ├── context
- ├── e2e
- ├── helpers
  ├── hooks
      └── eas
  ├── screens
  ├── services
      ├── api
-     ├── i18n
- └── store
+ ├── store
      └── slices
+ └── translations
+     └── locales
 ```
 
 <a id="app"></a>
@@ -104,12 +113,6 @@ React Context, Redux Context Provider, and Safe Area Provider.
 
 End-to-end tests for the project, structured similarly to screens for better management.
 
-<a id="helpers"></a>
-
-# Helpers
-
-Reusable helper functions, such as MMKV storage instance.
-
 <a id="hooks"></a>
 
 # Hooks
@@ -126,14 +129,20 @@ Pages of the application, organized in this folder and imported into specific ro
 
 # Services
 
-Services used in screens, such as API handling and internationalization (i18n). The `api` folder contains routes created
-with Axios instances, and the `i18n` folder contains functions for internationalization and localization.
+Services used in screens, such as API handling. The `api` folder contains routes created
+with Axios instances.
 
 <a id="store"></a>
 
 # Store
 
-RTK-based store with interfaces and slices for state management.
+RTK based store, uses MMKV storage and redux-persist for state persistence. The `slices` folder includes reducers used throughout the app.
+
+<a id="translations"></a>
+
+# Translations
+
+The `translations` folder contains functions and locales for internationalization and localization.
 
 <a id="run-expo-dev-build"></a>
 

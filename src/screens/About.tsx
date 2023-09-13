@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
-import { View, StyleSheet } from 'react-native';
-import Text from '../components/UI/Text';
+import { StyleSheet } from 'react-native';
+import { Text, View } from 'components/UI/Themed';
 
 const About = () => {
   return (
