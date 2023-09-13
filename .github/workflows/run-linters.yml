@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+
+jobs:
+  lint:
+    name: Run ESLint rules checking
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run linters
+        run: |
+          yarn install
+          yarn lint
