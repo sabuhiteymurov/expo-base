@@ -1,5 +1,9 @@
+name: Lint on Pull Request Merge
+
 on:
-  workflow_call:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   lint:
@@ -7,7 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: yarn install
+
       - name: Run linters
+        run: yarn lint
+
+      - name: Check for linting errors
         run: |
-          yarn install
-          yarn lint
+          lint_output=$(yarn lint --json)
+          if [[ "$lint_output" != "[]" ]]; then
+            echo "Linting errors found. Preventing merge."
+            echo "$lint_output"
+            exit 1
+          fi
