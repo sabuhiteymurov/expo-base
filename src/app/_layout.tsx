@@ -35,7 +35,7 @@ export default function RootLayout() {
 
   // Check internet connectivity
   useEffect(() => {
-    const unsubscribeNetInfo = NetInfo.addEventListener((state) => {
+    const unsubscribeNetInfo = NetInfo.addEventListener(state => {
       store.dispatch(setIsConnectedToInternet(state.isConnected as boolean));
     });
     return () => unsubscribeNetInfo();

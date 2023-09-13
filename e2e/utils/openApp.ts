@@ -51,4 +51,4 @@ const getLatestUpdateUrl = () =>
 
 const getAppId = () => appConfig?.expo?.extra?.eas?.projectId ?? '';
 
-const sleep = (t: any) => new Promise((res) => setTimeout(res, t));
+const sleep = (t: any) => new Promise(res => setTimeout(res, t));

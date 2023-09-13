@@ -10,13 +10,13 @@ export const useKeyboardVisible = () => {
       iosPlatform ? 'keyboardWillShow' : 'keyboardDidShow',
       () => {
         setKeyboardVisible(true);
-      }
+      },
     );
     const keyboardWillHideListener = Keyboard.addListener(
       iosPlatform ? 'keyboardWillHide' : 'keyboardDidHide',
       () => {
         setKeyboardVisible(false);
-      }
+      },
     );
 
     return () => {

@@ -2,7 +2,6 @@ import { useRouter } from 'expo-router';
 import { Button, StyleSheet } from 'react-native';
 import { View, Text } from 'components/UI/Themed';
 import { useTranslation } from 'react-i18next';
-import { reduxStorage } from '../store/storage';
 import { useAppDispatch } from '../store';
 import { setUser } from '../store/slices/appSlice';
 
