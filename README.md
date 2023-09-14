@@ -4,6 +4,7 @@
 
 ![Expo Base Top Language](https://img.shields.io/github/languages/top/sabuhiteymurov/expo-base)
 ![Expo Base Release Date](https://img.shields.io/github/release-date/sabuhiteymurov/expo-base)
+[![CI](https://github.com/sabuhiteymurov/expo-base/actions/workflows/run-linters.yml/badge.svg)](https://github.com/sabuhiteymurov/expo-base/actions/workflows/run-linters.yml)
 [![PR's welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/sabuhiteymurov/expo-base/pulls)
 
 <h1 align="center">Expo Base</h1>
