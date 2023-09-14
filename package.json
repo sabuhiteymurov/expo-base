@@ -84,7 +84,7 @@
     "@types/jest": "^29.5.4",
     "@types/react": "^18.2.21",
     "@types/react-redux": "^7.1.26",
-    "detox": "^20.11.2",
+    "detox": "^20.12.0",
     "detox-expo-helpers": "^0.6.0",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
