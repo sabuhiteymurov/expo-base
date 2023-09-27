@@ -41,7 +41,7 @@ i18next
     compatibilityJSON: 'v3',
     fallbackLng: 'en',
     resources,
-    lng: lng ? lng : isLocaleLngSupported ? localeLng : 'en',
+    lng: lng ? lng : isLocaleLngSupported ? localeLng : defaultLocale,
 
     keySeparator: false, // we do not use keys in form messages.welcome
 
