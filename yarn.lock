@@ -1474,10 +1474,10 @@
     resolve-from "^5.0.0"
     sucrase "^3.20.0"
 
-"@expo/metro-runtime@2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@expo/metro-runtime/-/metro-runtime-2.2.3.tgz#19ece4582c42a5273c52db821e294730dd6a1b05"
-  integrity sha512-SI1SfjsAKIryRLVgxcNBDywy1DN7L/EGcPZSS6+Juls3L6/mGluz97ytIJw3CTZ6S4X3hDL4QDvjyZv2szpTDA==
+"@expo/metro-runtime@2.2.10":
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/@expo/metro-runtime/-/metro-runtime-2.2.10.tgz#c88fd11ed0bf2e9616ed0e37b670dcf1b2bf2a59"
+  integrity sha512-4lEHpOpm7FFwnNsD985eZFtcf32WakD8wSGZmfqc/bkBks076PUb5qIfTgJviGEHF9OAuic+htQi/IcbEdBr9w==
   dependencies:
     "@bacons/react-views" "^1.1.3"
     qs "^6.10.3"
@@ -5435,10 +5435,10 @@ expo-font@~11.4.0:
   dependencies:
     fontfaceobserver "^2.1.0"
 
-expo-head@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/expo-head/-/expo-head-0.0.11.tgz#729fa6b9c8ce09c4af1e0efdccc86b23d7124569"
-  integrity sha512-nQ/DmxuLRLmCmnWFvfKoqG0/CA1SqEe4kvPlp7sAjsptLC7BHxOTViNchLznOlXTc/9yG05YYzZbWHvjIeE08Q==
+expo-head@0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/expo-head/-/expo-head-0.0.14.tgz#52405647a779b4b86fa714d43de36b95f7557d64"
+  integrity sha512-NvG6dwzi06F2hlYuz1rW/O8B/Us/2lDHTHZv0DJJmSWjAuT3Ja04WtS0QI9Yn5n0bSKKPrEGl4515q1zJ9MI0A==
   dependencies:
     react-helmet-async "^1.3.0"
 
@@ -5502,18 +5502,18 @@ expo-modules-core@1.5.11:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
 
-expo-router@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/expo-router/-/expo-router-2.0.0.tgz#e749a084442903804d7b2265891291f0bb570788"
-  integrity sha512-K9ezwX2ll4VAOPOKmpoy6b2bcWxnakAYGFYAx+WWlhR5IABWK0fwrNODs8pCHnN0P1SmeiiFf+8zsZ7MyiXODQ==
+expo-router@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/expo-router/-/expo-router-2.0.8.tgz#0a9a99c75b7e0f19e3abf0a37fca37aaba4aeda2"
+  integrity sha512-hKm15AzEmqASgts1qf1UQzjB4ON6iXrV+KsHVicK7L3lb2rLpI6Cj5ayWjjUAQ7GmTw5O2FR/gdlPYil4hALIQ==
   dependencies:
     "@bacons/react-views" "^1.1.3"
-    "@expo/metro-runtime" "2.2.3"
+    "@expo/metro-runtime" "2.2.10"
     "@radix-ui/react-slot" "1.0.1"
     "@react-navigation/bottom-tabs" "~6.5.7"
     "@react-navigation/native" "~6.1.6"
     "@react-navigation/native-stack" "~6.9.12"
-    expo-head "0.0.11"
+    expo-head "0.0.14"
     expo-splash-screen "~0.20.2"
     query-string "7.1.3"
     react-helmet-async "^1.3.0"
