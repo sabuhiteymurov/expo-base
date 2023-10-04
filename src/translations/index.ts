@@ -25,7 +25,7 @@ const resources: any = {
 } as const;
 // This is for situations where the user can change the language in the app.
 const lng: string | null = JSON.parse(
-  JSON.parse(reduxStorage.getItem('persist:root')?.['_j']).app
+  JSON.parse(reduxStorage.getItem('persist:root')?.['_j']).app,
 ).language;
 
 // Generally, we should use the locale language as the default language.
@@ -41,7 +41,7 @@ i18next
     compatibilityJSON: 'v3',
     fallbackLng: 'en',
     resources,
-    lng: lng ? lng : isLocaleLngSupported ? localeLng : 'en',
+    lng: lng ? lng : isLocaleLngSupported ? localeLng : defaultLocale,
 
     keySeparator: false, // we do not use keys in form messages.welcome
 

@@ -1,0 +1,28 @@
+name: ESLint
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Run ESLint rules checking
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run linters
+        run: yarn lint
+
+      - name: Check for linting errors
+        run: |
+          lint_output=$(yarn lint)
+          if [[ "$lint_output" == *"error"* ]]; then
+            echo "Linting errors found. Preventing merge."
+            echo "$lint_output"
+            exit 1
+          fi
