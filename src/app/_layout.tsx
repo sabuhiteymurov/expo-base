@@ -2,7 +2,7 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import NetInfo from '@react-native-community/netinfo';
-import { ProvidersWrapper } from 'context/auth';
+import ProvidersWrapper from 'context/providers';
 import { setIsConnectedToInternet } from 'store/slices/appSlice';
 import { store } from '../store';
 import '../translations';
@@ -13,8 +13,7 @@ export {
 } from 'expo-router';
 
 export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(dashboard)/(tabs)/home',
+  initialRouteName: '(dashboard)/(tabs)/home/index',
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -57,7 +56,7 @@ function RootLayoutNav() {
     <ProvidersWrapper>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen
-          name='(auth)/sign-in/index'
+          name='sign-in/index'
           options={{
             title: 'Sign In',
             gestureEnabled: false,
@@ -65,7 +64,7 @@ function RootLayoutNav() {
           }}
         />
         <Stack.Screen
-          name='(dashboard)/(tabs)'
+          name='(dashboard)'
           options={{
             headerShown: false,
             gestureEnabled: false,
