@@ -3,7 +3,6 @@ import { useSession } from 'context/ctx';
 
 export default function AppLayout() {
   const { session }: any = useSession();
-  console.log(session);
 
   // Only require authentication within the (app) group's layout as users
   // need to be able to access the (auth) group and sign in again.
@@ -13,6 +12,15 @@ export default function AppLayout() {
     return <Redirect href='/sign-in' />;
   }
 
-  // This layout can be deferred because it's not the root layout.
-  return <Stack />;
+  return (
+    <Stack>
+      <Stack.Screen
+        name='(tabs)'
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+        }}
+      />
+    </Stack>
+  );
 }

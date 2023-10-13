@@ -22,7 +22,7 @@ export async function setStorageItemAsync(
       if (value === null) {
         localStorage.removeItem(key);
       } else {
-        localStorage.setItem(key, value as string);
+        localStorage.setItem(key, JSON.stringify(value));
       }
     } catch (e) {
       console.error('Local storage is unavailable:', e);
@@ -31,7 +31,7 @@ export async function setStorageItemAsync(
     if (value == null) {
       await SecureStore.deleteItemAsync(key);
     } else {
-      await SecureStore.setItemAsync(key, value);
+      await SecureStore.setItemAsync(key, JSON.stringify(value));
     }
   }
 }
@@ -45,13 +45,16 @@ export function useStorageState(key: string): UseStateHook<string> {
     if (Platform.OS === 'web') {
       try {
         if (typeof localStorage !== 'undefined') {
-          setState(localStorage.getItem(key));
+          const rawItem = localStorage.getItem(key);
+          const item = JSON.parse(rawItem ?? 'null');
+          setState(item);
         }
       } catch (e) {
         console.error('Local storage is unavailable:', e);
       }
     } else {
-      SecureStore.getItemAsync(key).then(value => {
+      SecureStore.getItemAsync(key).then(rawValue => {
+        const value = JSON.parse(rawValue ?? 'null');
         setState(value);
       });
     }

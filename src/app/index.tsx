@@ -1,21 +1,21 @@
 import { useRouter } from 'expo-router';
-import { useSession } from 'context/ctx';
 import { useEffect } from 'react';
 import { Text, View } from 'components/UI/Themed';
+import { useNavigationReady } from '../hooks/useNavigationReady';
 
 const index = () => {
-  const { isLoading }: any = useSession();
+  const navigationReady = useNavigationReady();
   const router = useRouter();
 
-  console.log(isLoading);
-
   useEffect(() => {
-    if (isLoading)
+    // We can't use the router here as it's not initialized yet.
+    // Instead, render a loading screen until the navigation tree is ready.
+    if (!navigationReady)
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text style={{ fontSize: 40 }}>Loading...</Text>
       </View>;
     else router.replace('(dashboard)/(tabs)/home');
-  }, [isLoading]);
+  }, [navigationReady]);
 };
 
 export default index;
