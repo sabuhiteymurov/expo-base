@@ -13,8 +13,14 @@ const config: ExpoConfig = {
     resizeMode: 'contain',
   },
   assetBundlePatterns: ['**/*'],
+  extra: {
+    eas: {
+      projectId: '61107862-a218-4135-bc3d-159d054eff83',
+    },
+  },
   ios: {
     supportsTablet: true,
+    bundleIdentifier: 'com.sabuhiteymurov.expobase',
   },
   android: {
     versionCode: 1,
@@ -22,6 +28,7 @@ const config: ExpoConfig = {
       foregroundImage: './src/assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff',
     },
+    package: 'com.sabuhiteymurov.expobase',
   },
   web: {
     bundler: 'metro',

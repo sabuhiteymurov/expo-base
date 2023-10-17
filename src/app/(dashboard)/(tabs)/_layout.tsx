@@ -14,12 +14,14 @@ export default function TabLayout() {
         name='home/index'
         options={{
           title: t('home:title'),
+          headerShown: false,
         }}
       />
       <Tabs.Screen
         name='profile/index'
         options={{
           title: t('profile:title'),
+          headerShown: false,
         }}
       />
     </Tabs>

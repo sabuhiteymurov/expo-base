@@ -37,7 +37,7 @@ function useProtectedRoute(user: any) {
   }, [user, segments, navigationReady]);
 }
 
-export function ProvidersWrapper({ children }: { children: ReactNode }) {
+function ProvidersWrapper({ children }: { children: ReactNode }) {
   const user = store.getState().app.user;
 
   const colorScheme = useColorScheme();
