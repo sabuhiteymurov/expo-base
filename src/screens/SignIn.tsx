@@ -2,8 +2,6 @@ import { useRouter } from 'expo-router';
 import { Button, Platform, StyleSheet, Text, View } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from '../store';
-import { setUser } from '../store/slices/appSlice';
 
 const SignIn = () => {
   const router = useRouter();
