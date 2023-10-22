@@ -13,7 +13,10 @@ export {
 } from 'expo-router';
 
 export const unstable_settings = {
-  initialRouteName: '(dashboard)/(tabs)/home/index',
+  initialRouteName: 'index',
+  dashboard: {
+    initialRouteName: '(tabs)/home/index',
+  },
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.

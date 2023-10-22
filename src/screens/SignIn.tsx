@@ -1,26 +1,16 @@
 import { useRouter } from 'expo-router';
-import { Button, Platform, StyleSheet, Text, View } from 'react-native';
-import * as SecureStore from 'expo-secure-store';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { Session, useSession } from '../context/ctx';
 
 const SignIn = () => {
   const router = useRouter();
   const { t } = useTranslation();
-  // const dispatch = useAppDispatch();
+  const { signIn }: Session = useSession();
 
   const navigateToDashboard = async () => {
-    // dispatch(setUser({ name: 'John Doe', age: 23 }));
-    const tokens = JSON.stringify({
-      accessToken: 'example-access-token',
-      refreshToken: 'example-refresh-token',
-    });
-    if (Platform.OS === 'web') {
-      localStorage.setItem('tokens', tokens);
-    } else {
-      await SecureStore.setItemAsync('tokens', tokens);
-    }
-
-    router.push('/home');
+    signIn('token');
+    router.replace('(dashboard)/(tabs)/home');
   };
 
   return (
