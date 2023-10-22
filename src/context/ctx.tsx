@@ -1,12 +1,14 @@
 import React from 'react';
 import { useStorageState } from '../hooks/useStorageState';
 
-const AuthContext = React.createContext<{
+export interface Session {
   signIn: (token: string) => void;
   signOut: () => void;
   session?: string | null;
   isLoading: boolean;
-} | null>(null);
+}
+
+const AuthContext = React.createContext<Session | null>(null);
 
 // This hook can be used to access the user info.
 export function useSession() {
@@ -17,16 +19,16 @@ export function useSession() {
     }
   }
 
-  return value;
+  return value as Session;
 }
 
 export function SessionProvider(props: any) {
-  const [[isLoading, session], setSession] = useStorageState('tokens');
+  const [[isLoading, session], setSession] = useStorageState('token');
 
   return (
     <AuthContext.Provider
       value={{
-        signIn: (token: string) => {
+        signIn: async (token: string) => {
           // Perform sign-in logic here
           setSession(token);
         },
