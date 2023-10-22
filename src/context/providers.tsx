@@ -6,7 +6,6 @@ import {
   ThemeProvider,
 } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { RootSiblingParent } from 'react-native-root-siblings';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import { store } from '../store';
@@ -17,17 +16,14 @@ const ProvidersWrapper = ({ children }: { children: ReactNode }) => {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      {/* Necessary for @gorhom/bottom-sheet */}
-      <RootSiblingParent>
-        <SafeAreaProvider>
-          {/* Necessary for @gorhom/bottom-sheet */}
-          <GestureHandlerRootView style={{ flex: 1 }}>
-            <SessionProvider>
-              <Provider store={store}>{children}</Provider>
-            </SessionProvider>
-          </GestureHandlerRootView>
-        </SafeAreaProvider>
-      </RootSiblingParent>
+      <SafeAreaProvider>
+        {/* Necessary for @gorhom/bottom-sheet */}
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <SessionProvider>
+            <Provider store={store}>{children}</Provider>
+          </SessionProvider>
+        </GestureHandlerRootView>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 };
