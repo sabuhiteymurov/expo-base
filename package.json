@@ -43,7 +43,7 @@
     "@shopify/flash-list": "1.4.3",
     "@testing-library/jest-native": "^5.4.2",
     "@testing-library/react-native": "^12.2.0",
-    "axios": "^1.5.1",
+    "axios": "^1.6.0",
     "expo": "^49.0.16",
     "expo-build-properties": "~0.8.3",
     "expo-dev-client": "~2.4.11",
