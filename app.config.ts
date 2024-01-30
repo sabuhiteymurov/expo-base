@@ -37,7 +37,17 @@ const config: ExpoConfig = {
   plugins: [
     'expo-router',
     'expo-localization',
-    'expo-build-properties',
+    [
+      'expo-build-properties',
+      {
+        ios: {
+          newArchEnabled: true,
+        },
+        android: {
+          newArchEnabled: true,
+        },
+      },
+    ],
     [
       '@config-plugins/detox',
       {
