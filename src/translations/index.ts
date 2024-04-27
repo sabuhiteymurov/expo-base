@@ -26,9 +26,13 @@ const resources: any = {
 const rootStorage: string = reduxStorage.getItem('persist:root')?.[
   '_j'
 ] as string;
-const lng: string | null = rootStorage
-  ? JSON.parse(rootStorage)?.app?.lng
-  : null;
+let lng: string | null = null;
+
+try {
+  lng = rootStorage ? JSON.parse(JSON.parse(rootStorage).app).language : null;
+} catch (e) {
+  console.error(e);
+}
 
 // Generally, we should use the locale language as the default language.
 const localeLng = getLocales()[0].languageCode as string;
