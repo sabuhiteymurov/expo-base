@@ -35,9 +35,20 @@ const config: ExpoConfig = {
     favicon: './src/assets/images/favicon.png',
   },
   plugins: [
+    'expo-font',
     'expo-router',
     'expo-localization',
-    'expo-build-properties',
+    [
+      'expo-build-properties',
+      {
+        ios: {
+          newArchEnabled: true,
+        },
+        android: {
+          newArchEnabled: true,
+        },
+      },
+    ],
     [
       '@config-plugins/detox',
       {
