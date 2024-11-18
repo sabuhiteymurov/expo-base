@@ -38,6 +38,7 @@ const config: ExpoConfig = {
     'expo-font',
     'expo-router',
     'expo-localization',
+    'expo-secure-store',
     [
       'expo-build-properties',
       {
