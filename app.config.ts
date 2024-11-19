@@ -8,6 +8,7 @@ const config: ExpoConfig = {
   icon: './src/assets/images/icon.png',
   scheme: 'expo-base',
   userInterfaceStyle: 'automatic',
+  newArchEnabled: true,
   splash: {
     image: './src/assets/images/splash.png',
     resizeMode: 'contain',
