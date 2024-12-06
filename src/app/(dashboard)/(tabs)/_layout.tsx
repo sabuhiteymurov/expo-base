@@ -7,13 +7,16 @@ export default function TabLayout() {
     <Tabs
       screenOptions={() => ({
         headerShown: false,
-        tabBarStyle: {},
       })}
     >
       <Tabs.Screen
         name='home/index'
         options={{
           title: t('home:title'),
+          tabBarIcon: ({ focused }) =>
+            focused
+              ? require('assets/svg/home-active.svg')
+              : require('assets/svg/home.svg'),
           headerShown: false,
         }}
       />
