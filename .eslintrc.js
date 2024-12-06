@@ -18,11 +18,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' },
-    ],
+    'import/extensions': 'off',
     'import/order': [
       'error',
       {
