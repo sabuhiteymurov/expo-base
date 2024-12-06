@@ -42,7 +42,6 @@ const defaultLocale = 'en';
 export const currentLanguage = i18next.language || defaultLocale;
 
 i18next.use(initReactI18next).init({
-  compatibilityJSON: 'v3',
   fallbackLng: 'en',
   resources,
   lng: lng ? lng : isLocaleLngSupported ? localeLng : defaultLocale,
