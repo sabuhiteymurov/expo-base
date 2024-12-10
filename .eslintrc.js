@@ -18,11 +18,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' },
-    ],
+    'import/extensions': 'off',
     'import/order': [
       'error',
       {
@@ -38,7 +34,7 @@ module.exports = {
     ],
     'padded-blocks': 'off',
     'no-underscore-dangle': 'off',
-    'max-len': [1, 180, 4],
+    'max-len': [1, 1000, 4],
     quotes: [2, 'single'],
     'linebreak-style': 0,
     semi: [1, 'always'],

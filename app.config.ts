@@ -40,10 +40,12 @@ const config: ExpoConfig = {
     'expo-router',
     'expo-localization',
     'expo-secure-store',
+    'react-native-bottom-tabs',
     [
       'expo-build-properties',
       {
         ios: {
+          useFrameworks: 'static',
           newArchEnabled: true,
         },
         android: {
