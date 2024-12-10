@@ -34,7 +34,7 @@ module.exports = {
     ],
     'padded-blocks': 'off',
     'no-underscore-dangle': 'off',
-    'max-len': [1, 180, 4],
+    'max-len': [1, 1000, 4],
     quotes: [2, 'single'],
     'linebreak-style': 0,
     semi: [1, 'always'],
