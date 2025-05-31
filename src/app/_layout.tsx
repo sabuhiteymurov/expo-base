@@ -63,7 +63,7 @@ function RootLayoutNav() {
           options={{
             title: 'Sign In',
             gestureEnabled: false,
-            animation: 'fade',
+            animation: 'none',
           }}
         />
         <Stack.Screen
@@ -72,7 +72,7 @@ function RootLayoutNav() {
             headerShown: false,
             gestureEnabled: false,
             fullScreenGestureEnabled: false,
-            animation: 'fade',
+            animation: 'none',
           }}
         />
       </Stack>
