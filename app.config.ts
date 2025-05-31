@@ -8,7 +8,6 @@ const config: ExpoConfig = {
   icon: './src/assets/images/icon.png',
   scheme: 'expo-base',
   userInterfaceStyle: 'automatic',
-  newArchEnabled: true,
   splash: {
     image: './src/assets/images/splash.png',
     resizeMode: 'contain',
@@ -41,15 +40,12 @@ const config: ExpoConfig = {
     'expo-localization',
     'expo-secure-store',
     'react-native-bottom-tabs',
+    'expo-web-browser',
     [
       'expo-build-properties',
       {
         ios: {
           useFrameworks: 'static',
-          newArchEnabled: true,
-        },
-        android: {
-          newArchEnabled: true,
         },
       },
     ],
