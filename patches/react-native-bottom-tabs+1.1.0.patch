@@ -1,0 +1,155 @@
+diff --git a/node_modules/react-native-bottom-tabs/ios/BottomAccessoryProvider.swift b/node_modules/react-native-bottom-tabs/ios/BottomAccessoryProvider.swift
+index 539efee..bed740c 100644
+--- a/node_modules/react-native-bottom-tabs/ios/BottomAccessoryProvider.swift
++++ b/node_modules/react-native-bottom-tabs/ios/BottomAccessoryProvider.swift
+@@ -8,18 +8,19 @@ import SwiftUI
+     self.delegate = delegate
+   }
+ 
+-  #if !os(macOS)
+-  @available(iOS 26.0, *)
+-  public func emitPlacementChanged(_ placement: TabViewBottomAccessoryPlacement?) {
+-    var placementValue = "none"
+-    if placement == .inline {
+-      placementValue = "inline"
+-    } else if placement == .expanded {
+-      placementValue = "expanded"
+-    }
+-    self.delegate?.onPlacementChanged(placement: placementValue)
+-  }
+-  #endif
++  // Commented out - iOS 26.0 API causes compilation issues
++  // #if !os(macOS)
++  // @available(iOS 26.0, *)
++  // public func emitPlacementChanged(_ placement: TabViewBottomAccessoryPlacement?) {
++  //   var placementValue = "none"
++  //   if placement == .inline {
++  //     placementValue = "inline"
++  //   } else if placement == .expanded {
++  //     placementValue = "expanded"
++  //   }
++  //   self.delegate?.onPlacementChanged(placement: placementValue)
++  // }
++  // #endif
+ }
+ 
+ @objc public protocol BottomAccessoryProviderDelegate {
+diff --git a/node_modules/react-native-bottom-tabs/ios/TabView/NewTabView.swift b/node_modules/react-native-bottom-tabs/ios/TabView/NewTabView.swift
+index d699315..ea28c09 100644
+--- a/node_modules/react-native-bottom-tabs/ios/TabView/NewTabView.swift
++++ b/node_modules/react-native-bottom-tabs/ios/TabView/NewTabView.swift
+@@ -67,60 +67,63 @@ struct ConditionalBottomAccessoryModifier: ViewModifier {
+   }
+ 
+   func body(content: Content) -> some View {
+-    #if os(macOS)
++    // Commented out iOS 26.0 API
++    // #if os(macOS)
+     // tabViewBottomAccessory is not available on macOS
+     content
+-    #else
+-    if #available(iOS 26.0, tvOS 26.0, visionOS 3.0, *), bottomAccessoryView != nil {
+-      content
+-        .tabViewBottomAccessory {
+-          renderBottomAccessoryView()
+-        }
+-    } else {
+-      content
+-    }
+-    #endif
++    // #else
++    // if #available(iOS 26.0, tvOS 26.0, visionOS 3.0, *), bottomAccessoryView != nil {
++    //   content
++    //     .tabViewBottomAccessory {
++    //       renderBottomAccessoryView()
++    //     }
++    // } else {
++    //   content
++    // }
++    // #endif
+   }
+ 
+-  @ViewBuilder
+-  private func renderBottomAccessoryView() -> some View {
+-    #if !os(macOS)
+-    if let bottomAccessoryView {
+-      if #available(iOS 26.0, *) {
+-        BottomAccessoryRepresentableView(view: bottomAccessoryView)
+-      }
+-    }
+-    #endif
+-  }
++  // Commented out - references iOS 26.0 API
++  // @ViewBuilder
++  // private func renderBottomAccessoryView() -> some View {
++  //   #if !os(macOS)
++  //   if let bottomAccessoryView {
++  //     if #available(iOS 26.0, *) {
++  //       BottomAccessoryRepresentableView(view: bottomAccessoryView)
++  //     }
++  //   }
++  //   #endif
++  // }
+ }
+ 
+-#if !os(macOS)
+-@available(iOS 26.0, *)
+-struct BottomAccessoryRepresentableView: PlatformViewRepresentable {
+-  @Environment(\.tabViewBottomAccessoryPlacement) var tabViewBottomAccessoryPlacement
+-  var view: PlatformView
+-
+-  func makeUIView(context: Context) -> PlatformView {
+-    let wrapper = UIView()
+-    wrapper.addSubview(view)
+-
+-    view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+-
+-    emitPlacementChanged(for: view)
+-    return wrapper
+-  }
+-
+-  func updateUIView(_ uiView: PlatformView, context: Context) {
+-    if let subview = uiView.subviews.first {
+-      subview.frame = uiView.bounds
+-    }
+-    emitPlacementChanged(for: view)
+-  }
+-
+-  private func emitPlacementChanged(for uiView: PlatformView) {
+-    if let contentView = uiView.value(forKey: "bottomAccessoryProvider") as? BottomAccessoryProvider {
+-      contentView.emitPlacementChanged(tabViewBottomAccessoryPlacement)
+-    }
+-  }
+-}
+-#endif
++// Commented out - iOS 26.0 API causes compilation issues
++// #if !os(macOS)
++// @available(iOS 26.0, *)
++// struct BottomAccessoryRepresentableView: PlatformViewRepresentable {
++//   @Environment(\.tabViewBottomAccessoryPlacement) var tabViewBottomAccessoryPlacement
++//   var view: PlatformView
++//
++//   func makeUIView(context: Context) -> PlatformView {
++//     let wrapper = UIView()
++//     wrapper.addSubview(view)
++//
++//     view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
++//
++//     emitPlacementChanged(for: view)
++//     return wrapper
++//   }
++//
++//   func updateUIView(_ uiView: PlatformView, context: Context) {
++//     if let subview = uiView.subviews.first {
++//       subview.frame = uiView.bounds
++//     }
++//     emitPlacementChanged(for: view)
++//   }
++//
++//   private func emitPlacementChanged(for uiView: PlatformView) {
++//     if let contentView = uiView.value(forKey: "bottomAccessoryProvider") as? BottomAccessoryProvider {
++//       contentView.emitPlacementChanged(tabViewBottomAccessoryPlacement)
++//     }
++//   }
++// }
++// #endif
