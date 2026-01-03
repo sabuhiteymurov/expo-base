@@ -78,7 +78,7 @@
     "zod": "^4.3.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.0",
+    "@babel/core": "^7.26.0",
     "@commitlint/config-conventional": "^18.4.3",
     "@config-plugins/detox": "^7.0.0",
     "@types/glob": "^9.0.0",
