@@ -4,6 +4,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "postinstall": "patch-package",
     "start": "expo start",
     "start -c": "expo start -c",
     "prebuild": "expo prebuild",
