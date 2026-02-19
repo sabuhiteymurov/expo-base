@@ -980,12 +980,12 @@
   dependencies:
     chalk "^4.1.0"
 
-"@config-plugins/detox@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@config-plugins/detox/-/detox-7.0.0.tgz#7282e500cf86840857528c6653ea3f2952796449"
-  integrity sha512-uI7GU0g6JkzlKwjD61NP3EcMrjuIPbTEeByiSiWR3aJ7U+uf1xiQlTlHQSNQtcf3/MWfZj4ref/zyBma9c1muw==
+"@config-plugins/detox@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@config-plugins/detox/-/detox-11.0.0.tgz#00ba51ce1cc806ea69dacbdcaa51addf1861692b"
+  integrity sha512-4RJxky7gA+SrEqwZnaNxvj3mDdSqOSPzKebMebJIAeZFdBgjhfWAdaAQuiy7DTCj+pybPHtPK97vqJY8147wWQ==
   dependencies:
-    expo-build-properties "~0.11.0"
+    expo-build-properties "^0.13.1"
 
 "@dabh/diagnostics@^2.0.8":
   version "2.0.8"
@@ -5226,13 +5226,13 @@ expo-asset@~12.0.12:
     "@expo/image-utils" "^0.8.8"
     expo-constants "~18.0.12"
 
-expo-build-properties@~0.11.0:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/expo-build-properties/-/expo-build-properties-0.11.1.tgz#dc9ab9fb1ac989b97da500b3ec75139c961d8b26"
-  integrity sha512-m4j4aEjFaDuBE6KWYMxDhWgLzzSmpE7uHKAwtvXyNmRK+6JKF0gjiXi0sXgI5ngNppDQpsyPFMvqG7uQpRuCuw==
+expo-build-properties@^0.13.1:
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/expo-build-properties/-/expo-build-properties-0.13.3.tgz#6b96d0486148fca6e74e62c7c502c0a9990931aa"
+  integrity sha512-gw7AYP+YF50Gr912BedelRDTfR4GnUEn9p5s25g4nv0hTJGWpBZdCYR5/Oi2rmCHJXxBqhPjxzV7JRh72fntLg==
   dependencies:
     ajv "^8.11.0"
-    semver "^7.5.3"
+    semver "^7.6.0"
 
 expo-build-properties@~1.0.10:
   version "1.0.10"
