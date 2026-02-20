@@ -39,26 +39,33 @@ export async function transformAppConfig(
     `package: '${bundleId}'`,
   );
 
-  // Remove plugins for deselected features
+  // Remove plugins for deselected features (scoped to the plugins array)
   const deselected = FEATURE_GROUPS.filter(
     f => !selectedFeatures.includes(f.id),
   );
-  for (const feature of deselected) {
-    for (const plugin of feature.plugins) {
-      // Remove array-style plugin entry: ['plugin-name', { ... }],
-      const arrayPluginRegex = new RegExp(
-        `\\s*\\[\\s*'${escapeRegex(plugin)}'[\\s\\S]*?\\],?\\n?`,
-        'g',
-      );
-      content = content.replace(arrayPluginRegex, '\n');
 
-      // Remove string-style plugin entry: 'plugin-name',
-      const stringPluginRegex = new RegExp(
-        `\\s*'${escapeRegex(plugin)}',?\\n?`,
-        'g',
-      );
-      content = content.replace(stringPluginRegex, '\n');
-    }
+  const pluginsToRemove = deselected.flatMap(f => f.plugins);
+  if (pluginsToRemove.length > 0) {
+    content = content.replace(
+      /(plugins:\s*\[)([\s\S]*?)(\])/,
+      (_, open, body, close) => {
+        let pluginsBody = body;
+        for (const plugin of pluginsToRemove) {
+          // Remove array-style plugin entry: ['plugin-name', { ... }],
+          const arrayPluginRegex = new RegExp(
+            `\\s*\\[\\s*'${escapeRegex(plugin)}'[\\s\\S]*?\\],?\\n?`,
+          );
+          pluginsBody = pluginsBody.replace(arrayPluginRegex, '\n');
+
+          // Remove string-style plugin entry: 'plugin-name',
+          const stringPluginRegex = new RegExp(
+            `\\s*'${escapeRegex(plugin)}',?\\n?`,
+          );
+          pluginsBody = pluginsBody.replace(stringPluginRegex, '\n');
+        }
+        return `${open}${pluginsBody}${close}`;
+      },
+    );
   }
 
   await writeFile(configPath, content);

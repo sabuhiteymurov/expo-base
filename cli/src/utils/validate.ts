@@ -10,7 +10,7 @@ export function validateProjectName(name: string): string | undefined {
 export function validateBundleIdPrefix(prefix: string): string | undefined {
   if (!prefix) return 'Bundle identifier prefix is required';
   if (!/^[a-z][a-z0-9]*(\.[a-z][a-z0-9]*)+$/i.test(prefix)) {
-    return 'Invalid bundle ID format (e.g., com.company)';
+    return 'Use reverse domain notation where each segment starts with a letter (e.g., com.company)';
   }
   return undefined;
 }

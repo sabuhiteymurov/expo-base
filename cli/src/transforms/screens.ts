@@ -42,7 +42,6 @@ async function transformHome(
     content = content.replace(/t\('home:changeLang'\)/g, "'Change language'");
     content = content.replace(/t\('home:english'\)/g, "'English'");
     content = content.replace(/t\('home:german'\)/g, "'German'");
-    content = content.replace(/\{('.*?')\}/g, '$1');
   }
 
   if (!selectedFeatures.includes('state-management')) {
@@ -112,7 +111,6 @@ async function transformProfile(
 
   content = content.replace(/t\('profile:title'\)/g, "'Profile'");
   content = content.replace(/t\('profile:signOut'\)/g, "'Sign out'");
-  content = content.replace(/\{('.*?')\}/g, '$1');
 
   await writeFile(filePath, content);
 }
@@ -139,7 +137,6 @@ async function transformSignIn(
 
   content = content.replace(/t\('signIn:title'\)/g, "'Sign in screen'");
   content = content.replace(/t\('signIn:goToDashboard'\)/g, "'Go to dashboard'");
-  content = content.replace(/\{('.*?')\}/g, '$1');
 
   await writeFile(filePath, content);
 }

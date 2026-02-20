@@ -75,12 +75,6 @@ cd my-app
 npx expo start
 ```
 
-You can also pass the project name directly as an argument to skip the first prompt:
-
-```bash
-npx create-expo-base my-app
-```
-
 <br>
 
 <a id="boilerplate-features"></a>

@@ -9,14 +9,25 @@ import { installDeps } from './utils/package-manager';
 import { gitInit } from './utils/git';
 import { pathExists } from './utils/fs';
 
-const VERSION = '1.0.0';
+declare const __VERSION__: string;
+const VERSION = __VERSION__;
 
 async function main() {
   const args = process.argv.slice(2);
   const defaultProjectName = args.find(a => !a.startsWith('-'));
   const templatePathIdx = args.indexOf('--template-path');
-  const templatePath =
-    templatePathIdx !== -1 ? args[templatePathIdx + 1] : undefined;
+  let templatePath: string | undefined;
+  if (templatePathIdx !== -1) {
+    templatePath = args[templatePathIdx + 1];
+    if (!templatePath || templatePath.startsWith('-')) {
+      console.error('Error: --template-path requires a path argument');
+      process.exit(1);
+    }
+    if (!(await pathExists(templatePath))) {
+      console.error(`Error: template path does not exist: ${templatePath}`);
+      process.exit(1);
+    }
+  }
 
   p.intro(`${pc.bgCyan(pc.black(' create-expo-base '))} ${pc.dim(`v${VERSION}`)}`);
 

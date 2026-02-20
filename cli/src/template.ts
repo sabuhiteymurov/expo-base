@@ -1,7 +1,5 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { pipeline } from 'node:stream/promises';
-import { createWriteStream } from 'node:fs';
 import { extract } from 'tar';
 import { ALWAYS_EXCLUDE, REPO_URL } from './constants';
 import { copyDir, pathExists } from './utils/fs';
@@ -44,8 +42,8 @@ async function scaffoldFromGitHub(projectDir: string): Promise<void> {
     throw new Error(`Failed to download template: ${response.statusText}`);
   }
 
-  const fileStream = createWriteStream(tarPath);
-  await pipeline(response.body as any, fileStream);
+  const buffer = Buffer.from(await response.arrayBuffer());
+  await fs.writeFile(tarPath, buffer);
 
   // Extract tarball
   await extract({
