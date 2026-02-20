@@ -82,3 +82,6 @@ artifacts/
 
 *.log
 
+# Claude
+.claude/
+
