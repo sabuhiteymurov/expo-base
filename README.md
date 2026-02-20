@@ -13,7 +13,9 @@
 
 <br>
 
+- [Quick Start](#quick-start)
 - [Boilerplate Features](#boilerplate-features)
+- [Optional Features](#optional-features)
 - [Folder Structure](#folder-structure)
   - [App](#app)
   - [Assets](#assets)
@@ -30,21 +32,89 @@
 
 <br>
 
+<a id="quick-start"></a>
+
+## Quick Start
+
+Scaffold a new project with the interactive CLI:
+
+```bash
+npx create-expo-base my-app
+```
+
+You'll be guided through a few prompts:
+
+```
+┌  create-expo-base v1.0.0
+│
+◇  What will your project be called?
+│  my-app
+│
+◇  Bundle identifier prefix? (e.g., com.company)
+│  com.mycompany
+│
+◆  Which features would you like to include?
+│  ◼ State Management (Redux Toolkit + MMKV)
+│  ◼ Internationalization (i18next)
+│  ◻ E2E Testing (Detox)
+│  ...
+│
+◇  Which package manager?
+│  ● yarn  ○ npm  ○ pnpm  ○ bun
+│
+◇  Initialize a git repository?
+│  Yes
+│
+└  Your project is ready!
+```
+
+Then start developing:
+
+```bash
+cd my-app
+npx expo start
+```
+
+You can also pass the project name directly as an argument to skip the first prompt:
+
+```bash
+npx create-expo-base my-app
+```
+
+<br>
+
 <a id="boilerplate-features"></a>
 
 ## Boilerplate Features
 
-- File-Based Routing
+Every scaffolded project includes these out of the box:
+
+- File-Based Routing (Expo Router)
 - Vanilla StyleSheet Kit
-- Network Handling
-- Local Storage Management
 - Dark Theme Support
-- Internationalization and Localization
 - TypeScript Integration
 - Font Management
 - Splash Screen Configuration
-- Authentication Setup
-- End-to-End Testing Support
+- Authentication Setup (Expo Secure Store)
+
+<br>
+
+<a id="optional-features"></a>
+
+## Optional Features
+
+The CLI lets you pick which of these to include. Deselected features are cleanly removed — no leftover imports, deps, or dead code.
+
+| Feature | Libraries |
+|---|---|
+| **State Management** | Redux Toolkit, MMKV, Redux Persist |
+| **Internationalization** | i18next, react-i18next, expo-localization |
+| **E2E Testing** | Detox, EAS Build test profiles |
+| **HTTP Client** | Axios |
+| **Forms & Validation** | react-hook-form, zod |
+| **UI Kit** | Bottom Sheet, Flash List, Bottom Tabs, SVG, Size Matters |
+| **Animations** | Reanimated, Worklets |
+| **Network Info** | NetInfo, UUID |
 
 <br>
 
@@ -155,4 +225,3 @@ The `translations` folder contains functions and locales for internationalizatio
 - Run on both Android & iOS: `npm start` (or `yarn start`).
 - Run on Android: `npm run android` (or `yarn android`).
 - Run on iOS: `npm run ios` (or `yarn ios`).
-- ✨ Don't forget to enable ESLint ✨
