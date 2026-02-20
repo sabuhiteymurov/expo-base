@@ -1,9 +1,9 @@
 {
   "name": "create-expo-base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scaffold a new Expo project from the expo-base template",
   "bin": {
-    "create-expo-base": "./dist/index.cjs"
+    "create-expo-base": "./dist/index.js"
   },
   "files": [
     "dist"
