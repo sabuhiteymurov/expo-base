@@ -22,6 +22,7 @@
     "web": "expo start --web",
     "typecheck": "tsc",
     "lint": "eslint ./src ./e2e --fix",
+    "lint:check": "eslint ./src ./e2e --max-warnings 0",
     "test": "jest --watchAll",
     "e2e:ios:build": "detox build -c ios.release",
     "e2e:ios:test": "detox test -c ios.release",
