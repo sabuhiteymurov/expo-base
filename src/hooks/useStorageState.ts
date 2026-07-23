@@ -53,17 +53,21 @@ export function useStorageState(key: string): UseStateHook<string> {
         console.error('Local storage is unavailable:', e);
       }
     } else {
-      SecureStore.getItemAsync(key).then(rawValue => {
-        const value = JSON.parse(rawValue ?? 'null');
-        setState(value);
-      });
+      SecureStore.getItemAsync(key)
+        .then(rawValue => {
+          const value = JSON.parse(rawValue ?? 'null');
+          setState(value);
+        })
+        .catch((e: unknown) => {
+          console.error('Secure storage is unavailable:', e);
+        });
     }
   }, [key]);
 
   // Set
   const setValue = React.useCallback(
     (value: string | null | undefined) => {
-      setStorageItemAsync(key, value);
+      void setStorageItemAsync(key, value);
       setState(value);
     },
     [key],

@@ -60,6 +60,8 @@ module.exports = defineConfig([
       'no-multiple-empty-lines': [2, { max: 2 }],
       'import/newline-after-import': ['error', { count: 1 }],
       'import/no-unresolved': 'off',
+      'import/no-named-as-default-member': 'off',
+      'no-void': ['warn', { allowAsStatement: true }],
       'no-use-before-define': 'off',
       'prefer-arrow-callback': 'off',
       camelcase: 'off',

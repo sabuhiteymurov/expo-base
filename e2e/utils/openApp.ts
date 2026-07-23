@@ -25,7 +25,7 @@ async function openAppForDebugBuild(platform: string) {
     await device.launchApp({
       newInstance: true,
     });
-    sleep(3000);
+    await sleep(3000);
     await device.openURL({
       url: deepLinkUrl,
     });
