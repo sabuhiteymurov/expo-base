@@ -10,7 +10,7 @@ const SafeBottom = ({ style }: Props) => {
   return (
     <View
       style={[styles.safeBottom, style, { height: safeAreaInsets.bottom }]}
-    ></View>
+    />
   );
 };
 

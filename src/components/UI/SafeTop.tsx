@@ -14,7 +14,7 @@ const SafeTop = ({ bgColor, style }: IProps) => {
       style={[
         {
           height: safeAreaInsets.top,
-          backgroundColor: bgColor ? bgColor : colors.light.white,
+          backgroundColor: bgColor ?? colors.light.white,
         },
         style,
       ]}

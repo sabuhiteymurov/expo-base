@@ -4,7 +4,7 @@ import {
   DarkTheme,
   DefaultTheme,
   ThemeProvider,
-} from '@react-navigation/native';
+} from 'expo-router/react-navigation';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
@@ -17,7 +17,7 @@ const ProvidersWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <SafeAreaProvider>
-        {/* Necessary for @gorhom/bottom-sheet */}
+        {/* Required root view for react-native-gesture-handler */}
         <GestureHandlerRootView style={{ flex: 1 }}>
           <SessionProvider>
             <Provider store={store}>{children}</Provider>

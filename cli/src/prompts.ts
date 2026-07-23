@@ -11,7 +11,7 @@ export async function runPrompts(
     message: 'What will your project be called?',
     placeholder: 'my-awesome-app',
     initialValue: defaultProjectName,
-    validate: value => validateProjectName(value),
+    validate: value => validateProjectName(value ?? ''),
   })) as string;
 
   if (p.isCancel(projectName)) process.exit(0);
@@ -19,7 +19,7 @@ export async function runPrompts(
   const bundleIdPrefix = (await p.text({
     message: 'Bundle identifier prefix? (e.g., com.company)',
     placeholder: 'com.mycompany',
-    validate: value => validateBundleIdPrefix(value),
+    validate: value => validateBundleIdPrefix(value ?? ''),
   })) as string;
 
   if (p.isCancel(bundleIdPrefix)) process.exit(0);

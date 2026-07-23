@@ -52,12 +52,7 @@ export const FEATURE_GROUPS: FeatureGroup[] = [
     label: 'E2E Testing',
     description: 'Detox',
     deps: [],
-    devDeps: [
-      'detox',
-      'detox-expo-helpers',
-      '@config-plugins/detox',
-      'eslint-plugin-detox',
-    ],
+    devDeps: ['detox', '@config-plugins/detox'],
     files: ['e2e/', 'detox.config.js'],
     scripts: [
       'e2e:ios:build',
@@ -94,9 +89,10 @@ export const FEATURE_GROUPS: FeatureGroup[] = [
   {
     id: 'ui-kit',
     label: 'UI Kit',
-    description: 'Bottom Sheet, Flash List, Bottom Tabs, SVG, Size Matters',
+    description:
+      'Bottom Sheet (@expo/ui), Flash List, Bottom Tabs, SVG, Size Matters',
     deps: [
-      '@gorhom/bottom-sheet',
+      '@expo/ui',
       '@shopify/flash-list',
       'react-native-bottom-tabs',
       'react-native-svg',

@@ -30,9 +30,13 @@ export async function transformPackageJson(
     }
   }
 
-  // If e2e-testing removed, clean up lint script to not reference ./e2e
-  if (!selectedFeatures.includes('e2e-testing') && pkg.scripts?.lint) {
-    pkg.scripts.lint = pkg.scripts.lint.replace(' ./e2e', '');
+  // If e2e-testing removed, clean up lint scripts to not reference ./e2e
+  if (!selectedFeatures.includes('e2e-testing')) {
+    for (const script of ['lint', 'lint:check']) {
+      if (pkg.scripts?.[script]) {
+        pkg.scripts[script] = pkg.scripts[script].replace(' ./e2e', '');
+      }
+    }
   }
 
   // If ui-kit removed, also remove postinstall-related devDeps and scripts

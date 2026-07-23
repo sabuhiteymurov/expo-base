@@ -41,10 +41,10 @@ const isLocaleLngSupported = resources?.[localeLng];
 const defaultLocale = 'en';
 export const currentLanguage = i18next.language || defaultLocale;
 
-i18next.use(initReactI18next).init({
+void i18next.use(initReactI18next).init({
   fallbackLng: 'en',
   resources,
-  lng: lng ? lng : isLocaleLngSupported ? localeLng : defaultLocale,
+  lng: lng ?? (isLocaleLngSupported ? localeLng : defaultLocale),
 
   keySeparator: false,
 

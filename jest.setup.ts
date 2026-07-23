@@ -1,2 +1,2 @@
-// Import Jest Native matchers
-import '@testing-library/jest-native/extend-expect';
+// Jest matchers are built into @testing-library/react-native v12.4+
+export {};
