@@ -1,9 +1,9 @@
 {
   "name": "create-expo-base",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Scaffold a new Expo project from the expo-base template",
   "bin": {
-    "create-expo-base": "./dist/index.js"
+    "create-expo-base": "dist/index.js"
   },
   "files": [
     "dist"
@@ -20,6 +20,15 @@
     "scaffold",
     "cli"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabuhiteymurov/expo-base.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/sabuhiteymurov/expo-base/tree/main/cli#readme",
+  "bugs": {
+    "url": "https://github.com/sabuhiteymurov/expo-base/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "@clack/prompts": "^1.0.0",
