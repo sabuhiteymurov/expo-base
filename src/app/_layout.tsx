@@ -40,7 +40,9 @@ export default function RootLayout() {
     const unsubscribeNetInfo = NetInfo.addEventListener(state => {
       store.dispatch(setIsConnectedToInternet(state.isConnected as boolean));
     });
-    return () => unsubscribeNetInfo();
+    return () => {
+      unsubscribeNetInfo();
+    };
   }, []);
 
   useEffect(() => {

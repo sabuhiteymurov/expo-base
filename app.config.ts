@@ -8,10 +8,6 @@ const config: ExpoConfig = {
   icon: './src/assets/images/icon.png',
   scheme: 'expo-base',
   userInterfaceStyle: 'automatic',
-  splash: {
-    image: './src/assets/images/splash.png',
-    resizeMode: 'contain',
-  },
   assetBundlePatterns: ['**/*'],
   extra: {
     eas: {
@@ -41,6 +37,15 @@ const config: ExpoConfig = {
     'expo-secure-store',
     'react-native-bottom-tabs',
     'expo-web-browser',
+    'expo-image',
+    'expo-status-bar',
+    [
+      'expo-splash-screen',
+      {
+        image: './src/assets/images/splash.png',
+        resizeMode: 'contain',
+      },
+    ],
     [
       'expo-build-properties',
       {

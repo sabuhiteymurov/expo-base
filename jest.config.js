@@ -1,5 +1,5 @@
 module.exports = {
-  preset: '@testing-library/react-native',
+  preset: 'jest-expo',
   moduleNameMapper: {
     // Handle module aliases (this will be automatically configured for you soon)
     '^@/(.*)$': '<rootDir>/src/$1',

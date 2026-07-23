@@ -6,9 +6,9 @@ const platform = device.getPlatform();
 module.exports.openApp = async function openApp() {
   const config = await resolveConfig();
   if (config.configurationName.split('.')[1] === 'debug') {
-    return await openAppForDebugBuild(platform);
+    await openAppForDebugBuild(platform);
   } else {
-    return await device.launchApp({
+    await device.launchApp({
       newInstance: true,
     });
   }
